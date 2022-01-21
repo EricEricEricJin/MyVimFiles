@@ -1,0 +1,59 @@
+{
+    // C++
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+
+    "diagnostic-languageserver.filetypes": {
+     "python": "pylint"
+    },
+    "diagnostic-languageserver.linters": {
+      "pylint": {
+        "sourceName": "pylint",
+        "command": "pylint",
+        "debounce": 100,
+        "args": [
+          "--output-format",
+          "text",
+          "--score",
+          "no",
+          "--msg-template",
+          "'{line}:{column}:{category}:{msg} ({msg_id}:{symbol})'",
+          "%file",
+            "--disable=E402,C901,W503,W504,E116,E702,C0103,C0114,C0115,C0116,C0103,C0301,W0613,W0102,R0903,R0902,R0914,R0915,R0205,W0703,W0702,W0603",
+        ],
+        "formatPattern": [
+          "^(\\d+?):(\\d+?):([a-z]+?):(.*)$",
+          {
+            "line": 1,
+            "column": 2,
+            "endColumn": 2,
+            "security": 3,
+            "message": 4
+          }
+        ],
+        "rootPatterns": ["pyproject.toml", "setup.py", ".git"],
+        "securities": {
+          "informational": "hint",
+          "refactor": "info",
+          "convention": "info",
+          "warning": "warning",
+          "error": "error",
+          "fatal": "error"
+        },
+        "offsetColumn": 1,
+        "offsetColumnEnd": 1,
+        "formatLines": 1
+      }
+    },
+
+    "diagnostic-languageserver.formatFiletypes": {
+      "python": ["autopep8", "isort", "docformatter"]
+    },
+
+    // explorer
+    "explorer.width": 24,
+    "explorer.icon.enableNerdfont": true,
+    // "explorer.icon.source": "nerdfont.vim"
+
+    // "coc.source.vimtex.filetypes" : ["tex", "md"]
+}
+
