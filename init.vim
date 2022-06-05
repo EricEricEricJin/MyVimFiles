@@ -1,1 +1,1 @@
-lua require('luaconfig')
+lua require('init')
