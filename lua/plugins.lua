@@ -1,7 +1,7 @@
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'vim-airline/vim-airline'
 Plug 'neovim/nvim-lspconfig'
@@ -16,6 +16,7 @@ vim.call('plug#end')
 
 
 -- Configure nerdtree
-vim.cmd([[autocmd VimEnter * NERDTree]])
-vim.keymap.set('n', '<C-b>', function() vim.cmd([[NERDTreeFocus]]) end)
+-- vim.cmd([[autocmd VimEnter * NERDTree]])
+-- vim.keymap.set('n', '<C-b>', function() vim.cmd([[NERDTreeFocus]]) end)
+require'nvim-tree'.setup {}
 
